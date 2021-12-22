@@ -1,3 +1,5 @@
 if game.PlaceId == 2888719930 then
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/AliceZurburg/CloudyHub/main/BoxingSim"))()
+elseif game.PlaceId == 3823781113 then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/AliceZurburg/CloudyHub/main/BoxingSim"))()
 end
