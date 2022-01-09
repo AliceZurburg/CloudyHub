@@ -1,5 +1,14 @@
-if game.PlaceId == 2888719930 then
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/AliceZurburg/CloudyHub/main/BoxingSim"))()
-elseif game.PlaceId == 3823781113 then
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/AliceZurburg/CloudyHub/main/Saber"))()
+local cloudyHubGamesList = {
+    [2888719930] = "Boxing Simulator 2",
+    [3823781113] = "Saber Simulator"
+}
+
+for i,v in next, cloudyHubGamesList do
+    cloudyHubGamesList[i] = table.concat(v:split(' '), '_')
+end
+
+if cloudyHubGamesList[game.PlaceId] or cloudyHubGamesList[game.GameId] ~= nil then
+	return loadstring(game:HttpGet("https://raw.githubusercontent.com/AliceZurburg/CloudyHub/main/Games/" .. cloudyHubGamesList[game.PlaceId] or cloudyHubGamesList[game.GameId], true))()
+else
+	return "Game not supported!"	
 end
