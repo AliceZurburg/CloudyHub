@@ -3,12 +3,8 @@ local cloudyHubGamesList = {
     [3823781113] = "Saber Simulator"
 }
 
-for i,v in next, cloudyHubGamesList do
-    cloudyHubGamesList[i] = table.concat(v:split(' '), '_')
-end
-
 if cloudyHubGamesList[game.PlaceId] ~= nil then
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/AliceZurburg/CloudyHub/main/Games/" ..game.PlaceId, true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/AliceZurburg/CloudyHub/main/Games/" .. cloudyHubGamesList[game.PlaceId], true))()
 else
 	return "Game not supported!"	
 end
