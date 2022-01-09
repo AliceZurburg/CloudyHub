@@ -7,8 +7,8 @@ for i,v in next, cloudyHubGamesList do
     cloudyHubGamesList[i] = table.concat(v:split(' '), '_')
 end
 
-if cloudyHubGamesList[game.PlaceId] or cloudyHubGamesList[game.GameId] ~= nil then
-	return loadstring(game:HttpGet("https://raw.githubusercontent.com/AliceZurburg/CloudyHub/main/Games/" .. cloudyHubGamesList[game.PlaceId] or cloudyHubGamesList[game.GameId], true))()
+if cloudyHubGamesList[game.PlaceId] ~= nil then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/AliceZurburg/CloudyHub/main/Games/" .. cloudyHubGamesList[game.PlaceId], true))()
 else
 	return "Game not supported!"	
 end
