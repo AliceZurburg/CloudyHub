@@ -1,0 +1,66 @@
+local player = game.Players.LocalPlayer
+
+AutoLifing = false
+
+function laps(value)
+    if value == true then
+        AutoLifing = true
+        repeat
+            player.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").PoolTraining.PoolTrainingP2.CFrame
+            wait(.2)
+            player.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").PoolTraining.PoolTrainingP1.CFrame
+            wait(.2)
+        until AutoLifing == false
+    elseif value == false then
+        AutoLifing = false
+    end
+end
+
+function testinglap(value)
+    if value == true then
+        AutoLifing = true
+        repeat
+            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").PoolTraining.PoolTrainingP2, 0)
+            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").PoolTraining.PoolTrainingP2, 1)
+            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").PoolTraining.PoolTrainingP1, 0)
+            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game:GetService("Workspace").PoolTraining.PoolTrainingP1, 1)
+            wait(0.01)
+        until AutoLifing == false
+    elseif value == false then
+        AutoLifing = false
+    end
+end
+
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/zxciaz/VenyxUI/main/Reuploaded"))()
+local venyx = library.new("Cloudy Hub - Development", 5013109572)
+
+local themes = {
+    Background = Color3.fromRGB(24, 24, 24),
+    Glow = Color3.fromRGB(0, 0, 0),
+    Accent = Color3.fromRGB(10, 10, 10),
+    LightContrast = Color3.fromRGB(20, 20, 20),
+    DarkContrast = Color3.fromRGB(14, 14, 14),  
+    TextColor = Color3.fromRGB(255, 255, 255)
+    }
+
+local page = venyx:addPage("Farm Laps", 5012544693)
+local section1 = page:addSection("Farm Laps")
+
+
+section1:addToggle("Enable Farm", nil, function(value)
+    for i,v in pairs(game.Players.LocalPlayer.PlayerScripts:GetChildren()) do
+        if v.Name == "LocalScript" then
+            v:Destroy()
+        end
+    end
+    laps(value)
+end)
+
+section1:addToggle("Enable Test Farm", nil, function(value)
+    for i,v in pairs(game.Players.LocalPlayer.PlayerScripts:GetChildren()) do
+        if v.Name == "LocalScript" then
+            v:Destroy()
+        end
+    end
+    testinglap(value)
+end)
