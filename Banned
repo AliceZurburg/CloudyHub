@@ -1,3 +1,0 @@
-local Banned = {15911105}
-
-return Banned
