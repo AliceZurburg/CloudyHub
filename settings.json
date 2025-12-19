@@ -6,20 +6,23 @@
     "566268441": "Manager",
     "254719982": "Mod",
     "921613981": "Mod",
-    "2294273310": "Mod"
+    "2294273310": "Mod",
+    "457697197": "Special"
   },
   "Tags": {
     "Owner": {"Text": "Owner", "Color": "a900ff"},
     "Manager": {"Text": "Manager", "Color": "ff0000"},
     "Supervisor": {"Text": "Supervisor", "Color": "ff00dd"},
     "Admin": {"Text": "Admin", "Color": "ff7b00"},
-    "Mod": {"Text": "Moderator", "Color": "00ff2f"}
+    "Mod": {"Text": "Moderator", "Color": "00ff2f"},
+    "Special": {"Text": "Special", "Color": "00aaff"}
   },
   "Icons":{
     "Owner": "rbxassetid://131123792022083",
     "Manager": "rbxassetid://18785061459",
     "Supervisor": "rbxassetid://18785151651",
     "Admin": "rbxassetid://18785182809",
-    "Mod": "rbxassetid://13749636301"
+    "Mod": "rbxassetid://13749636301",
+    "Special": "rbxassetid://91409030085703"
   }
 }
