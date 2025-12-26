@@ -27,5 +27,8 @@
     "Admin": "rbxassetid://18785182809",
     "Mod": "rbxassetid://13749636301",
     "Special": "rbxassetid://91409030085703"
+  },
+  "GameVersion":{
+    "3823781113": "v3.25"
   }
 }
